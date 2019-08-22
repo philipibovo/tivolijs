@@ -94,12 +94,15 @@
 	background: #282923;
 	border: 2px solid #2f2f2a;
 	outline: 1px solid #121211;
-	color: #909173;
 }
 
 .mycode.dark p.lang {
 	background: #181915;
 	color: #909173;
+}
+
+.mycode.dark p.line {
+	color: #cac4c1;
 }
 
 .mycode.dark p.line:hover {
