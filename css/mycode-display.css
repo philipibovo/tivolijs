@@ -1,45 +1,46 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 .mycode {
-	width: 100%;
-	background: #eee;
-	border: 2px solid #eee;
-	outline: 1px solid #bbb;
-	color: #444;
-	font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-	text-align: left;
-	box-sizing: border-box;
-	overflow-x: auto;
-	font-size: 14px;
-	box-shadow: 0px 6px 17px rgba(0,0,0,0.2);
-	white-space: nowrap;
+  width: 100%;
+  background: #eee;
+  border: 2px solid #eee;
+  outline: 1px solid #bbb;
+  color: #444;
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono,
+    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  text-align: left;
+  box-sizing: border-box;
+  overflow-x: auto;
+  font-size: 14px;
+  box-shadow: 0px 6px 17px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
 }
 
 .mycode p.lang {
-	width: 100%;
-	height: 25px;
-	box-sizing: border-box;
-	background-image: linear-gradient(to right, #ddd , transparent);
-	margin: 0 0 1px 0;
-	padding: 3px 6px;
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	cursor: default;
-	z-index: 2;
+  width: 100%;
+  height: 25px;
+  box-sizing: border-box;
+  background-image: linear-gradient(to right, #ddd, transparent);
+  margin: 0 0 1px 0;
+  padding: 3px 6px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  cursor: default;
+  z-index: 2;
 }
 
 .mycode p.line {
-	position: relative;
-	line-height: 1;
-	margin: 0 0 0 40px;
-	padding: 2px 5px;
-	width: calc(100% - 40px);
-	box-sizing: border-box;
-	color: #5a5a5a;
+  position: relative;
+  line-height: 1;
+  margin: 0 0 0 40px;
+  padding: 2px 5px;
+  width: calc(100% - 40px);
+  box-sizing: border-box;
+  color: #5a5a5a;
 }
 
 .mycode p.line:hover {
-	background: #e6e6e6;
+  background: #e6e6e6;
 }
 
 .mycode p.line::before {
@@ -58,25 +59,29 @@
 }
 
 .mycode p.line:hover::before {
-	background: #f3f3f3;
+  background: #f3f3f3;
 }
 
 .mycode p.line.html::before {
-	border-left: 3px solid #ffa136;
+  border-left: 3px solid #ffa136;
 }
 
 .mycode p.line.css::before {
-	border-left: 3px solid #29a9df;
+  border-left: 3px solid #29a9df;
+}
+
+.mycode p.line.terminal::before {
+  border-left: 3px solid #520081;
 }
 
 .mycode p.line.javascript::before,
 .mycode p.line.js::before,
 .mycode p.line.jquery::before {
-	border-left: 3px solid #f7df1e;
+  border-left: 3px solid #f7df1e;
 }
 
 .mycode p.line.react::before {
-	border-left: 3px solid #61dafb;
+  border-left: 3px solid #61dafb;
 }
 
 .mycode p.line.angular::before,
@@ -86,27 +91,27 @@
 .mycode p.line.angular4::before,
 .mycode p.line.angular6::before,
 .mycode p.line.angular7::before {
-	border-left: 3px solid #dd0031;
+  border-left: 3px solid #dd0031;
 }
 
 /* DARK THEME */
 .mycode.dark {
-	background: #282923;
-	border: 2px solid #2f2f2a;
-	outline: 1px solid #121211;
+  background: #282923;
+  border: 2px solid #2f2f2a;
+  outline: 1px solid #121211;
 }
 
 .mycode.dark p.lang {
-	background: #181915;
-	color: #909173;
+  background: #181915;
+  color: #909173;
 }
 
 .mycode.dark p.line {
-	color: #cac4c1;
+  color: #cac4c1;
 }
 
 .mycode.dark p.line:hover {
-	background: #393a32;
+  background: #393a32;
 }
 
 .mycode.dark p.line::before {
@@ -116,5 +121,5 @@
 }
 
 .mycode.dark p.line:hover::before {
-	background: #45473a;
+  background: #45473a;
 }
