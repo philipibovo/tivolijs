@@ -28,7 +28,12 @@
 
 	<link rel="icon" href="img/favicon.png">
 
-	<link rel="stylesheet" href="css/fontawesome-all.min.css">
+	<link
+		rel="stylesheet"
+		href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+		crossorigin="anonymous"
+	/>
 	<link rel="stylesheet" href="css/pompei-1.0.0.min.css">
 	<link rel="stylesheet" href="css/tivoli-1.0.0.min.css">
 	<link rel="stylesheet" href="css/mycode-display.css">
@@ -53,8 +58,21 @@
 			</div>
 		</div>
 
-		<div id="download">
-			<button>DOWNLOAD</button>
+		<div id="start">
+			<!-- <button><i class="fab fa-github"></i></button> -->
+			<div id="header-package">
+				<span id="header-btn-download">
+					<i class="fas fa-download"></i>
+				</span>
+			</div>
+			<!-- end #header-package -->
+
+			<div id="header-github">
+					<a href="https://github.com/philipibovo/tivolijs" target="_blank">
+						<i class="fab fa-github"></i>
+					</a>
+				</div>
+				<!-- end #header-github -->
 		</div>
 
 		<div id="menu-mobile-action">
@@ -161,11 +179,50 @@
 			</div><!-- end .pp-row -->
 
 			<div class="pp-row">
-				<div class="pp-col">
-					<button>DOWNLOAD</button>
-					<div class="version">v1.0.0</div>
-				</div><!-- end .pp-col -->
-			</div><!-- end .pp-row -->
+				<div id="github" class="pp-col pp-col-sm-12 pp-col-md-12">
+					<p class="title">
+						<i class="fab fa-github"></i>
+					</p>
+
+					<p>Acesse o repositório do projeto no Github:</p>
+
+					<p>
+						<a href="https://github.com/philipibovo/tivolijs" target="_blank">
+							https://github.com/philipibovo/tivolijs
+						</a>
+					</p>
+
+					<p class="space-top-30">
+						Clone o projeto do Github diretamente em seu diret&oacute;rio usando
+						o terminal:
+					</p>
+
+					<div class="mycode">
+						<p class="lang">Terminal</p>
+						<p class="line">
+							git clone https://github.com/philipibovo/tivolijs.git
+						</p>
+					</div>
+					<!-- end .mycode -->
+				</div>
+				<!-- end .pp-col#github -->
+
+				<div id="package" class="pp-col pp-col-sm-12 pp-col-md-12">
+					<p class="title">
+						<i class="far fa-file-archive"></i>
+					</p>
+
+					<p>Faça o download do pacote:</p>
+
+					<button id="btn-download" class="space-top-30">
+						DOWNLOAD <span>(zipped package)</span>
+					</button>
+				</div>
+				<!-- end .pp-col#package -->
+			</div>
+			<!-- end .pp-row -->
+
+			<div id="or">OU</div>
 
 			<div class="pp-row">
 				<div id="logo" class="pp-col">
