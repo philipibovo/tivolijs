@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:300|Pacifico|Roboto|Source+Code+Pro|Questrial&display=swap');
+
+::-webkit-scrollbar{width:6px;border-left:1px solid #E6ECF8}
+::-webkit-scrollbar-thumb{background-color:#ccc}.is-form-page
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	color: #555;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+}
+
+header, main, section, footer {
+	clear: both;
+}
+
+.left {
+	text-align: left;
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+.sectionTitle {
+	font-family: 'Comfortaa', cursive;
+	cursor: default;
+}
+
+.sectionSubTitle {
+	font-weight: bold;
+}
+
+.space-top-20 {
+	margin-top: 20px;
+}
+
+.no-space-top-20 {
+	margin-top: -20px;
+}
+
+.color-primary {
+	color: var(--color-primary);
+}
+
+.color-success {
+	color: var(--color-success);
+}
+
+.color-error {
+	color: var(--color-error);
+}
+
+.color-warning {
+	color: var(--color-warning);
+}
+
+.color-info {
+	color: var(--color-info);
+}
+
+.bg-primary {
+	background: var(--color-primary);
+	color: #fff;
+}
+
+.bg-success {
+	background: var(--color-success);
+	color: #fff;
+}
+
+.bg-error {
+	background: var(--color-error);
+	color: #fff;
+}
+
+.bg-warning {
+	background: var(--color-warning);
+	color: #555;
+}
+
+.bg-info {
+	background: var(--color-info);
+	color: #fff;
+}
