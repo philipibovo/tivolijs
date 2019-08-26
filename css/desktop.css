@@ -95,7 +95,7 @@ section {
 }
 
 .menu.footer-visible {
-  height: calc(100vh - 165px);
+  height: calc(100vh - 250px);
 }
 
 .menu span.title {
