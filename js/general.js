@@ -1,10 +1,10 @@
 $(window).on("load", function() {
   $("#header-btn-download").click(function() {
-    window.location = "tivolijs-1.0.0.zip";
+    window.location = "tivolijs-1.0.1.zip";
   });
 
   $("#btn-download").click(function() {
-    window.location = "tivolijs-1.0.0.zip";
+    window.location = "tivolijs-1.0.1.zip";
   });
 
   $(".menu > ul > li > ul span.title").click(function() {

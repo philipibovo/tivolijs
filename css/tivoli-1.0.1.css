@@ -1,0 +1,1867 @@
+/*!
+ * 2018.08.01
+ * tivolijs 1.0.0 (http://philipi.bovo.me/tivolijs)
+ * By Philipi Bovo
+ */
+
+:root {
+	--color-primary: #777777;
+	--color-primary-dark: #555555;
+	--color-primary-light: #b9b9b9;
+	--color-primary-bg: #f0f0f0;
+	--color-primary-bg-dark: #e0e0e0;
+	--color-primary-shadow: rgba(0,0,0,.1);
+	--color-success: #008f28;
+	--color-success-dark: #007020;
+	--color-success-light: #78b088;
+	--color-success-bg: #e8ffee;
+	--color-success-bg-dark: #c1e7cb;
+	--color-success-shadow: rgba(0,112,32,.1);
+	--color-error: #db0000;
+	--color-error-dark: #b30000;
+	--color-error-light: #c68383;
+	--color-error-bg: #ffebeb;
+	--color-error-bg-dark: #efd3d3;
+	--color-error-shadow: rgba(208,0,0,.1);
+	--color-warning: #ffc107;
+	--color-warning-dark: #e0a800;
+	--color-warning-light: #e1c981;
+	--color-warning-bg: #fff4d1;
+	--color-warning-bg-dark: #f4e6bc;
+	--color-warning-shadow: rgba(255,193,7,.1);
+	--color-info: #2975ff;
+	--color-info-dark: #005aff;
+	--color-info-light: #7993c3;
+	--color-info-bg: #e6efff;
+	--color-info-bg-dark: #d2dcef;
+	--color-info-shadow: rgba(0,90,255,.1);
+	--time-transition: 150ms;
+}
+
+.tivoli-style label, .tivoli-label {
+	height: 20px;
+	font-size: 13px;
+	font-weight: bold;
+	color: var(--color-primary-dark);
+	margin: 0 5px;
+	display: block;
+}
+
+.tivoli-style label.primary, .tivoli-label.primary {
+	color: var(--color-primary);
+}
+
+.tivoli-style label.success, .tivoli-label.success {
+	color: var(--color-success);
+}
+
+.tivoli-style label.error, .tivoli-label.error {
+	color: var(--color-error);
+}
+
+.tivoli-style label.warning, .tivoli-label.warning {
+	color: var(--color-warning);
+}
+
+.tivoli-style label.info, .tivoli-label.info {
+	color: var(--color-info);
+}
+
+.tivoli-style p.msg, .tivoli-msg {
+	font-size: 13px;
+	margin: 0 5px;
+	text-align: center;
+	cursor: default;
+}
+
+.tivoli-style p.msg.primary, .tivoli-msg.primary {
+	color: var(--color-primary);
+}
+
+.tivoli-style p.msg.success, .tivoli-msg.success {
+	color: var(--color-success);
+}
+
+.tivoli-style p.msg.error, .tivoli-msg.error {
+	color: var(--color-error);
+}
+
+.tivoli-style p.msg.warning, .tivoli-msg.warning {
+	color: var(--color-warning);
+}
+
+.tivoli-style p.msg.info, .tivoli-msg.info {
+	color: var(--color-info);
+}
+
+.tivoli-style input[type=text],
+.tivoli-style input[type=email],
+.tivoli-style input[type=password],
+.tivoli-style input[type=number],
+.tivoli-style input[type=date],
+.tivoli-style input[type=datetime-local],
+.tivoli-style input[type=month],
+.tivoli-style input[type=range],
+.tivoli-style input[type=search],
+.tivoli-style input[type=tel],
+.tivoli-style input[type=time],
+.tivoli-style input[type=url],
+.tivoli-style input[type=week],
+.tivoli-style input[type=color],
+.tivoli-style select,
+.tivoli-style input[type=text].primary,
+.tivoli-style input[type=email].primary,
+.tivoli-style input[type=password].primary,
+.tivoli-style input[type=number].primary,
+.tivoli-style input[type=date].primary,
+.tivoli-style input[type=datetime-local].primary,
+.tivoli-style input[type=month].primary,
+.tivoli-style input[type=range].primary,
+.tivoli-style input[type=search].primary,
+.tivoli-style input[type=tel].primary,
+.tivoli-style input[type=time].primary,
+.tivoli-style input[type=url].primary,
+.tivoli-style input[type=week].primary,
+.tivoli-style input[type=color].primary,
+.tivoli-style select.primary,
+input[type=text].tivoli-field,
+input[type=email].tivoli-field,
+input[type=password].tivoli-field,
+input[type=number].tivoli-field,
+input[type=date].tivoli-field,
+input[type=datetime-local].tivoli-field,
+input[type=month].tivoli-field,
+input[type=range].tivoli-field,
+input[type=search].tivoli-field,
+input[type=tel].tivoli-field,
+input[type=time].tivoli-field,
+input[type=url].tivoli-field,
+input[type=week].tivoli-field,
+input[type=color].tivoli-field,
+select.tivoli-field,
+input[type=text].tivoli-field.primary,
+input[type=email].tivoli-field.primary,
+input[type=password].tivoli-field.primary,
+input[type=number].tivoli-field.primary,
+input[type=date].tivoli-field.primary,
+input[type=datetime-local].tivoli-field.primary,
+input[type=month].tivoli-field.primary,
+input[type=range].tivoli-field.primary,
+input[type=search].tivoli-field.primary,
+input[type=tel].tivoli-field.primary,
+input[type=time].tivoli-field.primary,
+input[type=url].tivoli-field.primary,
+input[type=week].tivoli-field.primary,
+input[type=color].tivoli-field.primary,
+select.tivoli-field.primary {
+	position: relative;
+	width: calc(100% - 10px);
+	height: 35px;
+	background: #fff;
+	border: 1px solid var(--color-primary);
+	padding: 8px 10px 7px 10px;
+	margin: 0 5px;
+	border-radius: 3px;
+	color: var(--color-primary-dark);
+	font-size: 16px;
+	outline: 0;
+	box-sizing: border-box;
+}
+
+.tivoli-style input[type=text]:focus,
+.tivoli-style input[type=email]:focus,
+.tivoli-style input[type=password]:focus,
+.tivoli-style input[type=number]:focus,
+.tivoli-style input[type=date]:focus,
+.tivoli-style input[type=datetime-local]:focus,
+.tivoli-style input[type=month]:focus,
+.tivoli-style input[type=search]:focus,
+.tivoli-style input[type=tel]:focus,
+.tivoli-style input[type=time]:focus,
+.tivoli-style input[type=url]:focus,
+.tivoli-style input[type=week]:focus,
+.tivoli-style input[type=color]:focus,
+.tivoli-style select:focus,
+.tivoli-style input[type=text].primary:focus,
+.tivoli-style input[type=email].primary:focus,
+.tivoli-style input[type=password].primary:focus,
+.tivoli-style input[type=number].primary:focus,
+.tivoli-style input[type=date].primary:focus,
+.tivoli-style input[type=datetime-local].primary:focus,
+.tivoli-style input[type=month].primary:focus,
+.tivoli-style input[type=search].primary:focus,
+.tivoli-style input[type=tel].primary:focus,
+.tivoli-style input[type=time].primary:focus,
+.tivoli-style input[type=url].primary:focus,
+.tivoli-style input[type=week].primary:focus,
+.tivoli-style input[type=color].primary:focus,
+.tivoli-style select.primary:focus,
+input[type=text].tivoli-field:focus,
+input[type=email].tivoli-field:focus,
+input[type=password].tivoli-field:focus,
+input[type=number].tivoli-field:focus,
+input[type=date].tivoli-field:focus,
+input[type=datetime-local].tivoli-field:focus,
+input[type=month].tivoli-field:focus,
+input[type=search].tivoli-field:focus,
+input[type=tel].tivoli-field:focus,
+input[type=time].tivoli-field:focus,
+input[type=url].tivoli-field:focus,
+input[type=week].tivoli-field:focus,
+input[type=color].tivoli-field:focus,
+select.tivoli-field:focus,
+input[type=text].tivoli-field.primary:focus,
+input[type=email].tivoli-field.primary:focus,
+input[type=password].tivoli-field.primary:focus,
+input[type=number].tivoli-field.primary:focus,
+input[type=date].tivoli-field.primary:focus,
+input[type=datetime-local].tivoli-field.primary:focus,
+input[type=month].tivoli-field.primary:focus,
+input[type=search].tivoli-field.primary:focus,
+input[type=tel].tivoli-field.primary:focus,
+input[type=time].tivoli-field.primary:focus,
+input[type=url].tivoli-field.primary:focus,
+input[type=week].tivoli-field.primary:focus,
+input[type=color].tivoli-field.primary:focus,
+select.tivoli-field.primary:focus {
+	box-shadow: 0 0 0 .2rem var(--color-primary-shadow);
+}
+
+.tivoli-style textarea,
+.tivoli-style textarea.primary,
+textarea.tivoli-field,
+textarea.tivoli-field.primary {
+	position: relative;
+	width: calc(100% - 10px);
+	min-height: 35px;
+	background: #fff;
+	border: 1px solid var(--color-primary);
+	padding: 8px 10px 7px 10px;
+	margin: 0 5px;
+	border-radius: 3px;
+	color: var(--color-primary-dark);
+	font-size: 16px;
+	outline: 0;
+	box-sizing: border-box;
+	text-align: left;
+}
+
+.tivoli-style textarea:focus,
+.tivoli-style textarea.primary:focus,
+textarea.tivoli-field:focus,
+textarea.tivoli-field.primary:focus,
+.tivoli-style textarea:focus,
+.tivoli-style textarea.primary:focus,
+textarea.tivoli-field:focus,
+textarea.tivoli-field.primary:focus {
+	box-shadow: 0 0 0 .2rem var(--color-primary-shadow);
+}
+
+.tivoli-style input[type=text].success,
+.tivoli-style input[type=email].success,
+.tivoli-style input[type=password].success,
+.tivoli-style input[type=number].success,
+.tivoli-style input[type=date].success,
+.tivoli-style input[type=datetime-local].success,
+.tivoli-style input[type=month].success,
+.tivoli-style input[type=search].success,
+.tivoli-style input[type=tel].success,
+.tivoli-style input[type=time].success,
+.tivoli-style input[type=url].success,
+.tivoli-style input[type=week].success,
+.tivoli-style select.success,
+.tivoli-style textarea.success,
+input[type=text].tivoli-field.success,
+input[type=email].tivoli-field.success,
+input[type=password].tivoli-field.success,
+input[type=number].tivoli-field.success,
+input[type=date].tivoli-field.success,
+input[type=datetime-local].tivoli-field.success,
+input[type=month].tivoli-field.success,
+input[type=search].tivoli-field.success,
+input[type=tel].tivoli-field.success,
+input[type=time].tivoli-field.success,
+input[type=url].tivoli-field.success,
+input[type=week].tivoli-field.success,
+select.tivoli-field.success,
+textarea.tivoli-field.success {
+	background: var(--color-success-bg);
+	border-color: var(--color-success);
+	color: var(--color-success);
+}
+
+.tivoli-style input[type=text].success:focus,
+.tivoli-style input[type=email].success:focus,
+.tivoli-style input[type=password].success:focus,
+.tivoli-style input[type=number].success:focus,
+.tivoli-style input[type=date].success:focus,
+.tivoli-style input[type=datetime-local].success:focus,
+.tivoli-style input[type=month].success:focus,
+.tivoli-style input[type=month].success:focus,
+.tivoli-style input[type=tel].success:focus,
+.tivoli-style input[type=time].success:focus,
+.tivoli-style input[type=url].success:focus,
+.tivoli-style input[type=week].success:focus,
+.tivoli-style select.success:focus,
+.tivoli-style textarea.success:focus,
+input[type=text].tivoli-field.success:focus,
+input[type=email].tivoli-field.success:focus,
+input[type=password].tivoli-field.success:focus,
+input[type=number].tivoli-field.success:focus,
+input[type=date].tivoli-field.success:focus,
+input[type=datetime-local].tivoli-field.success:focus,
+input[type=month].tivoli-field.success:focus,
+input[type=search].tivoli-field.success:focus,
+input[type=tel].tivoli-field.success:focus,
+input[type=time].tivoli-field.success:focus,
+input[type=url].tivoli-field.success:focus,
+input[type=week].tivoli-field.success:focus,
+select.tivoli-field.success:focus,
+textarea.tivoli-field.success:focus {
+	box-shadow: 0 0 0 .2rem var(--color-success-shadow);
+}
+
+.tivoli-style input[type=text].error,
+.tivoli-style input[type=email].error,
+.tivoli-style input[type=password].error,
+.tivoli-style input[type=number].error,
+.tivoli-style input[type=date].error,
+.tivoli-style input[type=datetime-local].error,
+.tivoli-style input[type=month].error,
+.tivoli-style input[type=search].error,
+.tivoli-style input[type=tel].error,
+.tivoli-style input[type=time].error,
+.tivoli-style input[type=url].error,
+.tivoli-style input[type=week].error,
+.tivoli-style select.error,
+.tivoli-style textarea.error,
+input[type=text].tivoli-field.error,
+input[type=email].tivoli-field.error,
+input[type=password].tivoli-field.error,
+input[type=number].tivoli-field.error,
+input[type=date].tivoli-field.error,
+input[type=datetime-local].tivoli-field.error,
+input[type=month].tivoli-field.error,
+input[type=search].tivoli-field.error,
+input[type=tel].tivoli-field.error,
+input[type=time].tivoli-field.error,
+input[type=url].tivoli-field.error,
+input[type=week].tivoli-field.error,
+select.tivoli-field.error,
+textarea.tivoli-field.error {
+	background: var(--color-error-bg);
+	border-color: var(--color-error);
+	color: var(--color-error);
+}
+
+.tivoli-style input[type=text].error:focus,
+.tivoli-style input[type=email].error:focus,
+.tivoli-style input[type=password].error:focus,
+.tivoli-style input[type=number].error:focus,
+.tivoli-style input[type=date].error:focus,
+.tivoli-style input[type=datetime-local].error:focus,
+.tivoli-style input[type=month].error:focus,
+.tivoli-style input[type=search].error:focus,
+.tivoli-style input[type=tel].error:focus,
+.tivoli-style input[type=time].error:focus,
+.tivoli-style input[type=url].error:focus,
+.tivoli-style input[type=week].-error:focus,
+.tivoli-style select.error:focus,
+.tivoli-style textarea.error:focus,
+input[type=text].tivoli-field.error:focus,
+input[type=email].tivoli-field.error:focus,
+input[type=password].tivoli-field.error:focus,
+input[type=number].tivoli-field.error:focus,
+input[type=date].tivoli-field.error:focus,
+input[type=datetime-local].tivoli-field.error:focus,
+input[type=month].tivoli-field.error:focus,
+input[type=search].tivoli-field.error:focus,
+input[type=tel].tivoli-field.error:focus,
+input[type=time].tivoli-field.error:focus,
+input[type=url].tivoli-field.error:focus,
+input[type=week].tivoli-field.error:focus,
+select.tivoli-field.error:focus,
+textarea.tivoli-field.error:focus {
+	box-shadow: 0 0 0 .2rem var(--color-error-shadow);
+}
+
+.tivoli-style input[type=text].warning,
+.tivoli-style input[type=email].warning,
+.tivoli-style input[type=password].warning,
+.tivoli-style input[type=number].warning,
+.tivoli-style input[type=date].warning,
+.tivoli-style input[type=datetime-local].warning,
+.tivoli-style input[type=month].warning,
+.tivoli-style input[type=search].warning,
+.tivoli-style input[type=tel].warning,
+.tivoli-style input[type=time].warning,
+.tivoli-style input[type=url].warning,
+.tivoli-style input[type=week].warning,
+.tivoli-style select.warning,
+.tivoli-style textarea.warning,
+input[type=text].tivoli-field.warning,
+input[type=email].tivoli-field.warning,
+input[type=password].tivoli-field.warning,
+input[type=number].tivoli-field.warning,
+input[type=date].tivoli-field.warning,
+input[type=datetime-local].tivoli-field.warning,
+input[type=month].tivoli-field.warning,
+input[type=search].tivoli-field.warning,
+input[type=tel].tivoli-field.warning,
+input[type=time].tivoli-field.warning,
+input[type=url].tivoli-field.warning,
+input[type=week].tivoli-field.warning,
+select.tivoli-field.warning,
+textarea.tivoli-field.warning {
+	background: var(--color-warning-bg);
+	border-color: var(--color-warning);
+	color: var(--color-warning);
+}
+
+.tivoli-style input[type=text].warning:focus,
+.tivoli-style input[type=email].warning:focus,
+.tivoli-style input[type=password].warning:focus,
+.tivoli-style input[type=number].warning:focus,
+.tivoli-style input[type=date].warning:focus,
+.tivoli-style input[type=datetime-local].warning:focus,
+.tivoli-style input[type=month].warning:focus,
+.tivoli-style input[type=month].warning:focus,
+.tivoli-style input[type=tel].warning:focus,
+.tivoli-style input[type=time].warning:focus,
+.tivoli-style input[type=url].warning:focus,
+.tivoli-style input[type=week].warning:focus,
+.tivoli-style select.warning:focus,
+.tivoli-style textarea.warning:focus,
+input[type=text].tivoli-field.warning:focus,
+input[type=email].tivoli-field.warning:focus,
+input[type=password].tivoli-field.warning:focus,
+input[type=number].tivoli-field.warning:focus,
+input[type=date].tivoli-field.warning:focus,
+input[type=datetime-local].tivoli-field.warning:focus,
+input[type=month].tivoli-field.warning:focus,
+input[type=search].tivoli-field.warning:focus,
+input[type=tel].tivoli-field.warning:focus,
+input[type=time].tivoli-field.warning:focus,
+input[type=url].tivoli-field.warning:focus,
+input[type=week].tivoli-field.warning:focus,
+select.tivoli-field.warning:focus,
+textarea.tivoli-field.warning:focus {
+	box-shadow: 0 0 0 .2rem var(--color-warning-shadow);
+}
+
+.tivoli-style input[type=text].info,
+.tivoli-style input[type=email].info,
+.tivoli-style input[type=password].info,
+.tivoli-style input[type=number].info,
+.tivoli-style input[type=date].info,
+.tivoli-style input[type=datetime-local].info,
+.tivoli-style input[type=month].info,
+.tivoli-style input[type=search].info,
+.tivoli-style input[type=tel].info,
+.tivoli-style input[type=time].info,
+.tivoli-style input[type=url].info,
+.tivoli-style input[type=week].info,
+.tivoli-style select.info,
+.tivoli-style textarea.info,
+input[type=text].tivoli-field.info,
+input[type=email].tivoli-field.info,
+input[type=password].tivoli-field.info,
+input[type=number].tivoli-field.info,
+input[type=date].tivoli-field.info,
+input[type=datetime-local].tivoli-field.info,
+input[type=month].tivoli-field.info,
+input[type=search].tivoli-field.info,
+input[type=tel].tivoli-field.info,
+input[type=time].tivoli-field.info,
+input[type=url].tivoli-field.info,
+input[type=week].tivoli-field.info,
+select.tivoli-field.info,
+textarea.tivoli-field.info {
+	background: var(--color-info-bg);
+	border-color: var(--color-info);
+	color: var(--color-info);
+}
+
+.tivoli-style input[type=text].info:focus,
+.tivoli-style input[type=email].info:focus,
+.tivoli-style input[type=password].info:focus,
+.tivoli-style input[type=number].info:focus,
+.tivoli-style input[type=date].info:focus,
+.tivoli-style input[type=datetime-local].info:focus,
+.tivoli-style input[type=month].info:focus,
+.tivoli-style input[type=month].info:focus,
+.tivoli-style input[type=tel].info:focus,
+.tivoli-style input[type=time].info:focus,
+.tivoli-style input[type=url].info:focus,
+.tivoli-style input[type=week].info:focus,
+.tivoli-style select.info:focus,
+.tivoli-style textarea.info:focus,
+input[type=text].tivoli-field.info:focus,
+input[type=email].tivoli-field.info:focus,
+input[type=password].tivoli-field.info:focus,
+input[type=number].tivoli-field.info:focus,
+input[type=date].tivoli-field.info:focus,
+input[type=datetime-local].tivoli-field.info:focus,
+input[type=month].tivoli-field.info:focus,
+input[type=search].tivoli-field.info:focus,
+input[type=tel].tivoli-field.info:focus,
+input[type=time].tivoli-field.info:focus,
+input[type=url].tivoli-field.info:focus,
+input[type=week].tivoli-field.info:focus,
+select.tivoli-field.info:focus,
+textarea.tivoli-field.info:focus {
+	box-shadow: 0 0 0 .2rem var(--color-info-shadow);
+}
+
+.tivoli-style input[type=text]:disabled,
+.tivoli-style input[type=email]:disabled,
+.tivoli-style input[type=password]:disabled,
+.tivoli-style input[type=number]:disabled,
+.tivoli-style input[type=date]:disabled,
+.tivoli-style input[type=datetime-local]:disabled,
+.tivoli-style input[type=month]:disabled,
+.tivoli-style input[type=search]:disabled,
+.tivoli-style input[type=tel]:disabled,
+.tivoli-style input[type=time]:disabled,
+.tivoli-style input[type=url]:disabled,
+.tivoli-style input[type=week]:disabled,
+.tivoli-style input[type=color]:disabled,
+.tivoli-style select:disabled,
+.tivoli-style textarea:disabled,
+.tivoli-style input[type=text]:read-only,
+.tivoli-style input[type=email]:read-only,
+.tivoli-style input[type=password]:read-only,
+.tivoli-style input[type=number]:read-only,
+.tivoli-style input[type=date]:read-only,
+.tivoli-style input[type=datetime-local]:read-only,
+.tivoli-style input[type=month]:read-only,
+.tivoli-style input[type=search]:read-only,
+.tivoli-style input[type=tel]:read-only,
+.tivoli-style input[type=time]:read-only,
+.tivoli-style input[type=url]:read-only,
+.tivoli-style input[type=week]:read-only,
+.tivoli-style input[type=color]:read-only,
+.tivoli-style textarea:read-only,
+input[type=text].tivoli-field:disabled,
+input[type=email].tivoli-field:disabled,
+input[type=password].tivoli-field:disabled,
+input[type=number].tivoli-field:disabled,
+input[type=date].tivoli-field:disabled,
+input[type=datetime-local].tivoli-field:disabled,
+input[type=month].tivoli-field:disabled,
+input[type=search].tivoli-field:disabled,
+input[type=tel].tivoli-field:disabled,
+input[type=time].tivoli-field:disabled,
+input[type=url].tivoli-field:disabled,
+input[type=week].tivoli-field:disabled,
+input[type=color].tivoli-field:disabled,
+select.tivoli-field:disabled,
+textarea.tivoli-field:disabled,
+input[type=text].tivoli-field:read-only,
+input[type=email].tivoli-field:read-only,
+input[type=password].tivoli-field:read-only,
+input[type=number].tivoli-field:read-only,
+input[type=date].tivoli-field:read-only,
+input[type=datetime-local].tivoli-field:read-only,
+input[type=month].tivoli-field:read-only,
+input[type=search].tivoli-field:read-only,
+input[type=tel].tivoli-field:read-only,
+input[type=time].tivoli-field:read-only,
+input[type=url].tivoli-field:read-only,
+input[type=week].tivoli-field:read-only,
+input[type=color].tivoli-field:read-only,
+textarea.tivoli-field:disabled {
+	background: var(--color-primary-bg);
+	cursor: not-allowed;
+}
+
+.tivoli-style input[type=text]:disabled:focus,
+.tivoli-style input[type=email]:disabled:focus,
+.tivoli-style input[type=password]:disabled:focus,
+.tivoli-style input[type=number]:disabled:focus,
+.tivoli-style input[type=date]:disabled:focus,
+.tivoli-style input[type=datetime-local]:disabled:focus,
+.tivoli-style input[type=month]:disabled:focus,
+.tivoli-style input[type=search]:disabled:focus,
+.tivoli-style input[type=tel]:disabled:focus,
+.tivoli-style input[type=time]:disabled:focus,
+.tivoli-style input[type=url]:disabled:focus,
+.tivoli-style input[type=week]:disabled:focus,
+.tivoli-style input[type=color]:disabled:focus,
+.tivoli-style select:disabled:focus,
+.tivoli-style textarea:disabled:focus,
+.tivoli-style input[type=text]:read-only:focus,
+.tivoli-style input[type=email]:read-only:focus,
+.tivoli-style input[type=password]:read-only:focus,
+.tivoli-style input[type=number]:read-only:focus,
+.tivoli-style input[type=date]:read-only:focus,
+.tivoli-style input[type=datetime-local]:read-only:focus,
+.tivoli-style input[type=month]:read-only:focus,
+.tivoli-style input[type=search]:read-only:focus,
+.tivoli-style input[type=tel]:read-only:focus,
+.tivoli-style input[type=time]:read-only:focus,
+.tivoli-style input[type=url]:read-only:focus,
+.tivoli-style input[type=week]:read-only:focus,
+.tivoli-style input[type=color]:read-only:focus,
+.tivoli-style textarea:read-only:focus,
+.tivoli-style input[type=text].tivoli-field:disabled:focus,
+.tivoli-style input[type=email].tivoli-field:disabled:focus,
+.tivoli-style input[type=password].tivoli-field:disabled:focus,
+.tivoli-style input[type=number].tivoli-field:disabled:focus,
+.tivoli-style input[type=date].tivoli-field:disabled:focus,
+.tivoli-style input[type=datetime-local].tivoli-field:disabled:focus,
+.tivoli-style input[type=month].tivoli-field:disabled:focus,
+.tivoli-style input[type=search].tivoli-field:disabled:focus,
+.tivoli-style input[type=tel].tivoli-field:disabled:focus,
+.tivoli-style input[type=time].tivoli-field:disabled:focus,
+.tivoli-style input[type=url].tivoli-field:disabled:focus,
+.tivoli-style input[type=week].tivoli-field:disabled:focus,
+.tivoli-style input[type=color].tivoli-field:disabled:focus,
+.tivoli-style select.tivoli-field:disabled:focus,
+.tivoli-style textarea.tivoli-field:disabled:focus,
+.tivoli-style input[type=text].tivoli-field:read-only:focus,
+.tivoli-style input[type=email].tivoli-field:read-only:focus,
+.tivoli-style input[type=password].tivoli-field:read-only:focus,
+.tivoli-style input[type=number].tivoli-field:read-only:focus,
+.tivoli-style input[type=date].tivoli-field:read-only:focus,
+.tivoli-style input[type=datetime-local].tivoli-field:read-only:focus,
+.tivoli-style input[type=month].tivoli-field:read-only:focus,
+.tivoli-style input[type=search].tivoli-field:read-only:focus,
+.tivoli-style input[type=tel].tivoli-field:read-only:focus,
+.tivoli-style input[type=time].tivoli-field:read-only:focus,
+.tivoli-style input[type=url].tivoli-field:read-only:focus,
+.tivoli-style input[type=week].tivoli-field:read-only:focus,
+.tivoli-style input[type=color].tivoli-field:read-only:focus,
+.tivoli-style textarea.tivoli-field:read-only:focus {
+	box-shadow: none;
+}
+
+.tivoli-style input[type=text].small,
+.tivoli-style input[type=email].small,
+.tivoli-style input[type=password].small,
+.tivoli-style input[type=number].small,
+.tivoli-style input[type=date].small,
+.tivoli-style input[type=datetime-local].small,
+.tivoli-style input[type=month].small,
+.tivoli-style input[type=range].small,
+.tivoli-style input[type=search].small,
+.tivoli-style input[type=tel].small,
+.tivoli-style input[type=time].small,
+.tivoli-style input[type=url].small,
+.tivoli-style input[type=week].small,
+.tivoli-style input[type=color].small,
+.tivoli-style select.small,
+input[type=text].tivoli-field.small,
+input[type=email].tivoli-field.small,
+input[type=password].tivoli-field.small,
+input[type=number].tivoli-field.small,
+input[type=date].tivoli-field.small,
+input[type=datetime-local].tivoli-field.small,
+input[type=month].tivoli-field.small,
+input[type=range].tivoli-field.small,
+input[type=search].tivoli-field.small,
+input[type=tel].tivoli-field.small,
+input[type=time].tivoli-field.small,
+input[type=url].tivoli-field.small,
+input[type=week].tivoli-field.small,
+input[type=color].tivoli-field.small,
+select.tivoli-field.small {
+	height: 25px;
+	padding: 7px 8px 6px 8px;
+	margin: 0 5px;
+	font-size: 12px;
+}
+
+.tivoli-style textarea.small,
+textarea.tivoli-field.small {
+	min-height: 25px;
+	font-size: 12px;
+}
+
+.tivoli-style input[type=text].big,
+.tivoli-style input[type=email].big,
+.tivoli-style input[type=password].big,
+.tivoli-style input[type=number].big,
+.tivoli-style input[type=date].big,
+.tivoli-style input[type=datetime-local].big,
+.tivoli-style input[type=month].big,
+.tivoli-style input[type=range].big,
+.tivoli-style input[type=search].big,
+.tivoli-style input[type=tel].big,
+.tivoli-style input[type=time].big,
+.tivoli-style input[type=url].big,
+.tivoli-style input[type=week].big,
+.tivoli-style input[type=color].big,
+.tivoli-style select.big,
+input[type=text].tivoli-field.big,
+input[type=email].tivoli-field.big,
+input[type=password].tivoli-field.big,
+input[type=number].tivoli-field.big,
+input[type=date].tivoli-field.big,
+input[type=datetime-local].tivoli-field.big,
+input[type=month].tivoli-field.big,
+input[type=range].tivoli-field.big,
+input[type=search].tivoli-field.big,
+input[type=tel].tivoli-field.big,
+input[type=time].tivoli-field.big,
+input[type=url].tivoli-field.big,
+input[type=week].tivoli-field.big,
+input[type=color].tivoli-field.big,
+select.tivoli-field.big {
+	height: 45px;
+	padding: 9px 12px 8px 12px;
+	margin: 0 5px;
+	font-size: 20px;
+}
+
+.tivoli-style textarea.big,
+textarea.tivoli-field.big {
+	min-height: 45px;
+	font-size: 20px;
+}
+
+.tivoli-style input[type="number"]::-webkit-outer-spin-button, 
+.tivoli-style input[type="number"]::-webkit-inner-spin-button,
+input[type="number"].tivoli-field::-webkit-outer-spin-button,
+input[type="number"].tivoli-field::-webkit-inner-spin-button,
+.tivoli-style input[type="time"]::-webkit-outer-spin-button, 
+.tivoli-style input[type="time"]::-webkit-inner-spin-button,
+input[type="time"].tivoli-field::-webkit-outer-spin-button,
+input[type="time"].tivoli-field::-webkit-inner-spin-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    opacity: 1;
+}
+
+.tivoli-style input[type="number"].success::-webkit-outer-spin-button, 
+.tivoli-style input[type="number"].success::-webkit-inner-spin-button,
+input[type="number"].tivoli-field.success::-webkit-outer-spin-button,
+input[type="number"].tivoli-field.success::-webkit-inner-spin-button,
+.tivoli-style input[type="time"].success::-webkit-outer-spin-button, 
+.tivoli-style input[type="time"].success::-webkit-inner-spin-button,
+input[type="time"].tivoli-field.success::-webkit-outer-spin-button,
+input[type="time"].tivoli-field.success::-webkit-inner-spin-button {
+  border-left: 1px solid var(--color-success);
+}
+
+.tivoli-style input[type="number"].error::-webkit-outer-spin-button, 
+.tivoli-style input[type="number"].error::-webkit-inner-spin-button,
+input[type="number"].tivoli-field.error::-webkit-outer-spin-button,
+input[type="number"].tivoli-field.error::-webkit-inner-spin-button,
+.tivoli-style input[type="time"].error::-webkit-outer-spin-button, 
+.tivoli-style input[type="time"].error::-webkit-inner-spin-button,
+input[type="time"].tivoli-field.error::-webkit-outer-spin-button,
+input[type="time"].tivoli-field.error::-webkit-inner-spin-button {
+  border-left: 1px solid var(--color-error);
+}
+
+.tivoli-style input[type=date]::-webkit-inner-spin-button,
+input[type=date].tivoli-field::-webkit-inner-spin-button,
+.tivoli-style input[type=datetime-local]::-webkit-inner-spin-button,
+input[type=datetime-local].tivoli-field::-webkit-inner-spin-button,
+.tivoli-style input[type=month]::-webkit-inner-spin-button,
+input[type=month].tivoli-field::-webkit-inner-spin-button,
+.tivoli-style input[type=week]::-webkit-inner-spin-button,
+input[type=week].tivoli-field::-webkit-inner-spin-button {
+	display: none;
+}
+
+.tivoli-style input[type=date]::-webkit-calendar-picker-indicator,
+input[type=date].tivoli-field::-webkit-calendar-picker-indicator,
+.tivoli-style input[type=datetime-local]::-webkit-calendar-picker-indicator,
+input[type=datetime-local].tivoli-field::-webkit-calendar-picker-indicator,
+.tivoli-style input[type=month]::-webkit-calendar-picker-indicator,
+input[type=month].tivoli-field::-webkit-calendar-picker-indicator,
+.tivoli-style input[type=week]::-webkit-calendar-picker-indicator,
+input[type=week].tivoli-field::-webkit-calendar-picker-indicator {
+	position: absolute;
+  top: 10px;
+  right: 3px;
+  bottom: 0;
+	opacity: 1
+}
+
+.tivoli-style input[type=date]::-webkit-calendar-picker-indicator:hover,
+input[type=date].tivoli-field::-webkit-calendar-picker-indicator:hover,
+.tivoli-style input[type=datetime-local]::-webkit-calendar-picker-indicator:hover,
+input[type=datetime-local].tivoli-field::-webkit-calendar-picker-indicator:hover,
+.tivoli-style input[type=month]::-webkit-calendar-picker-indicator:hover,
+input[type=month].tivoli-field::-webkit-calendar-picker-indicator:hover,
+.tivoli-style input[type=week]::-webkit-calendar-picker-indicator:hover,
+input[type=week].tivoli-field::-webkit-calendar-picker-indicator:hover {
+	cursor: pointer;
+	background: #fff;
+}
+
+.tivoli-style button.label-space,
+.tivoli-style input[type="button"].label-space,
+.tivoli-style input[type="submit"].label-space,
+.tivoli-style input[type="reset"].label-space,
+.tivoli-btn.label-space {
+	margin-top: 20px;
+}
+
+.tivoli-style button.block,
+.tivoli-style input[type="button"].block,
+.tivoli-style input[type="submit"].block,
+.tivoli-style input[type="reset"].block,
+.tivoli-btn.block {
+	width: 100%;
+}
+
+.tivoli-style button,
+.tivoli-style input[type="button"],
+.tivoli-style input[type="submit"],
+.tivoli-style input[type="reset"],
+.tivoli-style .tivoli-btn,
+.tivoli-btn {
+	height: 35px;
+	font-size: 16px;
+	padding: 8px 10px 7px 10px;
+	margin: 0 5px;
+	border-radius: 3px;
+	text-align: center;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+
+.tivoli-style button,
+.tivoli-style input[type="button"],
+.tivoli-style input[type="submit"],
+.tivoli-style input[type="reset"],
+.tivoli-style button.primary,
+.tivoli-style input[type="button"].primary,
+.tivoli-style input[type="submit"].primary,
+.tivoli-style input[type="reset"].primary,
+.tivoli-btn,
+.tivoli-btn.primary {
+	background: var(--color-primary);
+	color: rgba(255,255,255,0.9);
+	border: 1px solid var(--color-primary);
+}
+
+.tivoli-style button:hover,
+.tivoli-style input[type="button"]:hover,
+.tivoli-style input[type="submit"]:hover,
+.tivoli-style input[type="reset"]:hover,
+.tivoli-style button.primary:hover,
+.tivoli-style input[type="button"].primary:hover,
+.tivoli-style input[type="submit"].primary:hover,
+.tivoli-style input[type="reset"].primary:hover,
+.tivoli-btn.primary:hover,
+.tivoli-style button:focus,
+.tivoli-style input[type="button"]:focus,
+.tivoli-style input[type="submit"]:focus,
+.tivoli-style input[type="reset"]:focus,
+.tivoli-style button.primary:focus,
+.tivoli-style input[type="button"].primary:focus,
+.tivoli-style input[type="submit"].primary:focus,
+.tivoli-style input[type="reset"].primary:focus,
+.tivoli-btn.primary:focus {
+	background: var(--color-primary-dark);
+	border: 1px solid var(--color-primary-dark);
+	color: rgba(255,255,255,1);
+	box-shadow: 0 0 0 .2rem var(--color-primary-shadow);
+	transition: all var(--time-transition) linear;
+}
+
+.tivoli-style button.success,
+.tivoli-style input[type="button"].success,
+.tivoli-style input[type="submit"].success,
+.tivoli-style input[type="reset"].success,
+.tivoli-btn.success {
+	background: var(--color-success);
+	color: rgba(255,255,255,0.9);
+	border: 1px solid var(--color-success);
+}
+
+.tivoli-style button.success:hover,
+.tivoli-style input[type="button"].success:hover,
+.tivoli-style input[type="submit"].success:hover,
+.tivoli-style input[type="reset"].success:hover,
+.tivoli-btn.success:hover,
+.tivoli-style button.success:focus,
+.tivoli-style input[type="button"].success:focus,
+.tivoli-style input[type="submit"].success:focus,
+.tivoli-style input[type="reset"].success:focus,
+.tivoli-btn.success:focus {
+	background: var(--color-success-dark);
+	border: 1px solid var(--color-success-dark);
+	color: rgba(255,255,255,1);
+	box-shadow: 0 0 0 .2rem var(--color-success-shadow);
+	transition: all var(--time-transition) linear;
+}
+
+.tivoli-style button.error,
+.tivoli-style input[type="button"].error,
+.tivoli-style input[type="submit"].error,
+.tivoli-style input[type="reset"].error,
+.tivoli-btn.error {
+	background: var(--color-error);
+	color: rgba(255,255,255,0.9);
+	border: 1px solid var(--color-error);
+}
+
+.tivoli-style button.error:hover,
+.tivoli-style input[type="button"].error:hover,
+.tivoli-style input[type="submit"].error:hover,
+.tivoli-style input[type="reset"].error:hover,
+.tivoli-btn.error:hover,
+.tivoli-style button.error:focus,
+.tivoli-style input[type="button"].error:focus,
+.tivoli-style input[type="submit"].error:focus,
+.tivoli-style input[type="reset"].error:focus,
+.tivoli-btn.error:focus {
+	background: var(--color-error-dark);
+	border: 1px solid var(--color-error-dark);
+	color: rgba(255,255,255,1);
+	box-shadow: 0 0 0 .2rem var(--color-error-shadow);
+	transition: all var(--time-transition) linear;
+}
+
+.tivoli-style button.warning,
+.tivoli-style input[type="button"].warning,
+.tivoli-style input[type="submit"].warning,
+.tivoli-style input[type="reset"].warning,
+.tivoli-btn.warning {
+	background: var(--color-warning);
+	color: rgba(0,0,0,0.9);
+	border: 1px solid var(--color-warning);
+}
+
+.tivoli-style button.warning:hover,
+.tivoli-style input[type="button"].warning:hover,
+.tivoli-style input[type="submit"].warning:hover,
+.tivoli-style input[type="reset"].warning:hover,
+.tivoli-btn.warning:hover,
+.tivoli-style button.warning:focus,
+.tivoli-style input[type="button"].warning:focus,
+.tivoli-style input[type="submit"].warning:focus,
+.tivoli-style input[type="reset"].warning:focus,
+.tivoli-btn.warning:focus {
+	background: var(--color-warning-dark);
+	border: 1px solid var(--color-warning-dark);
+	color: rgba(0,0,0,1);
+	box-shadow: 0 0 0 .2rem var(--color-warning-shadow);
+	transition: all var(--time-transition) linear;
+}
+
+.tivoli-style button.info,
+.tivoli-style input[type="button"].info,
+.tivoli-style input[type="submit"].info,
+.tivoli-style input[type="reset"].info,
+.tivoli-btn.info {
+	background: var(--color-info);
+	color: rgba(255,255,255,0.9);
+	border: 1px solid var(--color-info);
+}
+
+.tivoli-style button.info:hover,
+.tivoli-style input[type="button"].info:hover,
+.tivoli-style input[type="submit"].info:hover,
+.tivoli-style input[type="reset"].info:hover,
+.tivoli-btn.info:hover,
+.tivoli-style button.info:focus,
+.tivoli-style input[type="button"].info:focus,
+.tivoli-style input[type="submit"].info:focus,
+.tivoli-style input[type="reset"].info:focus,
+.tivoli-btn.info:focus {
+	background: var(--color-info-dark);
+	border: 1px solid var(--color-info-dark);
+	color: rgba(255,255,255,1);
+	box-shadow: 0 0 0 .2rem var(--color-info-shadow);
+	transition: all var(--time-transition) linear;
+}
+
+.tivoli-style button.primary.light,
+.tivoli-style input[type="button"].primary.light,
+.tivoli-style input[type="submit"].primary.light,
+.tivoli-style input[type="reset"].primary.light,
+.tivoli-btn.primary.light {
+	background: #fff;
+	color: var(--color-primary);
+	border: 1px solid var(--color-primary);
+}
+
+.tivoli-style button.primary.light:hover,
+.tivoli-style input[type="button"].primary.light:hover,
+.tivoli-style input[type="submit"].primary.light:hover,
+.tivoli-style input[type="reset"].primary.light:hover,
+.tivoli-btn.primary.light:hover,
+.tivoli-style button.primary.light:focus,
+.tivoli-style input[type="button"].primary.light:focus,
+.tivoli-style input[type="submit"].primary.light:focus,
+.tivoli-style input[type="reset"].primary.light:focus,
+.tivoli-btn.primary.light:focus {
+	background: var(--color-primary-bg);
+	color: var(--color-primary-dark);
+	border: 1px solid var(--color-primary-dark);
+	box-shadow: 0 0 0 .2rem var(--color-primary-shadow);
+	transition: all var(--time-transition) linear;
+}
+
+.tivoli-style button.success.light,
+.tivoli-style input[type="button"].success.light,
+.tivoli-style input[type="submit"].success.light,
+.tivoli-style input[type="reset"].success.light,
+.tivoli-btn.success.light {
+	background: #fff;
+	color: var(--color-success);
+	border: 1px solid var(--color-success);
+}
+
+.tivoli-style button.success.light:hover,
+.tivoli-style input[type="button"].success.light:hover,
+.tivoli-style input[type="submit"].success.light:hover,
+.tivoli-style input[type="reset"].success.light:hover,
+.tivoli-btn.success.light:hover,
+.tivoli-style button.success.light:focus,
+.tivoli-style input[type="button"].success.light:focus,
+.tivoli-style input[type="submit"].success.light:focus,
+.tivoli-style input[type="reset"].success.light:focus,
+.tivoli-btn.success.light:focus {
+	background: var(--color-success-bg);
+	color: var(--color-success-dark);
+	border: 1px solid var(--color-success-dark);
+	box-shadow: 0 0 0 .2rem var(--color-success-shadow);
+	transition: all var(--time-transition) linear;
+}
+
+.tivoli-style button.error.light,
+.tivoli-style input[type="button"].error.light,
+.tivoli-style input[type="submit"].error.light,
+.tivoli-style input[type="reset"].error.light,
+.tivoli-btn.error.light {
+	background: #fff;
+	color: var(--color-error);
+	border: 1px solid var(--color-error);
+}
+
+.tivoli-style button.error.light:hover,
+.tivoli-style input[type="button"].error.light:hover,
+.tivoli-style input[type="submit"].error.light:hover,
+.tivoli-style input[type="reset"].error.light:hover,
+.tivoli-btn.error.light:hover,
+.tivoli-style button.error.light:focus,
+.tivoli-style input[type="button"].error.light:focus,
+.tivoli-style input[type="submit"].error.light:focus,
+.tivoli-style input[type="reset"].error.light:focus,
+.tivoli-btn.error.light:focus {
+	background: var(--color-error-bg);
+	color: var(--color-error-dark);
+	border: 1px solid var(--color-error-dark);
+	box-shadow: 0 0 0 .2rem var(--color-error-shadow);
+	transition: all var(--time-transition) linear;
+}
+
+.tivoli-style button.warning.light,
+.tivoli-style input[type="button"].warning.light,
+.tivoli-style input[type="submit"].warning.light,
+.tivoli-style input[type="reset"].warning.light,
+.tivoli-btn.warning.light {
+	background: #fff;
+	color: var(--color-warning);
+	border: 1px solid var(--color-warning);
+}
+
+.tivoli-style button.warning.light:hover,
+.tivoli-style input[type="button"].warning.light:hover,
+.tivoli-style input[type="submit"].warning.light:hover,
+.tivoli-style input[type="reset"].warning.light:hover,
+.tivoli-btn.warning.light:hover,
+.tivoli-style button.warning.light:focus,
+.tivoli-style input[type="button"].warning.light:focus,
+.tivoli-style input[type="submit"].warning.light:focus,
+.tivoli-style input[type="reset"].warning.light:focus,
+.tivoli-btn.warning.light:focus {
+	background: var(--color-warning-bg);
+	color: var(--color-warning-dark);
+	border: 1px solid var(--color-warning-dark);
+	box-shadow: 0 0 0 .2rem var(--color-warning-shadow);
+	transition: all var(--time-transition) linear;
+}
+
+.tivoli-style button.info.light,
+.tivoli-style input[type="button"].info.light,
+.tivoli-style input[type="submit"].info.light,
+.tivoli-style input[type="reset"].info.light,
+.tivoli-btn.info.light {
+	background: #fff;
+	color: var(--color-info);
+	border: 1px solid var(--color-info);
+}
+
+.tivoli-style button.info.light:hover,
+.tivoli-style input[type="button"].info.light:hover,
+.tivoli-style input[type="submit"].info.light:hover,
+.tivoli-style input[type="reset"].info.light:hover,
+.tivoli-btn.info.light:hover,
+.tivoli-style button.info.light:focus,
+.tivoli-style input[type="button"].info.light:focus,
+.tivoli-style input[type="submit"].info.light:focus,
+.tivoli-style input[type="reset"].info.light:focus,
+.tivoli-btn.info.light:focus {
+	background: var(--color-info-bg);
+	color: var(--color-info-dark);
+	border: 1px solid var(--color-info-dark);
+	box-shadow: 0 0 0 .2rem var(--color-info-shadow);
+	transition: all var(--time-transition) linear;
+}
+
+.tivoli-style button:disabled:hover,
+.tivoli-style input[type="button"]:disabled:hover,
+.tivoli-style input[type="submit"]:disabled:hover,
+.tivoli-style input[type="reset"]:disabled:hover,
+.tivoli-style button.primary:disabled:hover,
+.tivoli-style input[type="button"].primary:disabled:hover,
+.tivoli-style input[type="submit"].primary:disabled:hover,
+.tivoli-style input[type="reset"].primary:disabled:hover,
+.tivoli-btn.primary:disabled:hover,
+.tivoli-style button:disabled:focus,
+.tivoli-style input[type="button"]:disabled:focus,
+.tivoli-style input[type="submit"]:disabled:focus,
+.tivoli-style input[type="reset"]:disabled:focus,
+.tivoli-style button.primary:disabled:focus,
+.tivoli-style input[type="button"].primary:disabled:focus,
+.tivoli-style input[type="submit"].primary:disabled:focus,
+.tivoli-style input[type="reset"].primary:disabled:focus,
+.tivoli-btn.primary:disabled:focus,
+.tivoli-style button.success:disabled:hover,
+.tivoli-style input[type="button"].success:disabled:hover,
+.tivoli-style input[type="submit"].success:disabled:hover,
+.tivoli-style input[type="reset"].success:disabled:hover,
+.tivoli-btn.success:disabled:hover,
+.tivoli-style button.success:disabled:focus,
+.tivoli-style input[type="button"].success:disabled:focus,
+.tivoli-style input[type="submit"].success:disabled:focus,
+.tivoli-style input[type="reset"].success:disabled:focus,
+.tivoli-btn.success:disabled:focus,
+.tivoli-style button.error:disabled:hover,
+.tivoli-style input[type="button"].error:disabled:hover,
+.tivoli-style input[type="submit"].error:disabled:hover,
+.tivoli-style input[type="reset"].error:disabled:hover,
+.tivoli-btn.error:disabled:hover,
+.tivoli-style button.error:disabled:focus,
+.tivoli-style input[type="button"].error:disabled:focus,
+.tivoli-style input[type="submit"].error:disabled:focus,
+.tivoli-style input[type="reset"].error:disabled:focus,
+.tivoli-btn.error:disabled:focus,
+.tivoli-style button.warning:disabled:focus,
+.tivoli-style input[type="button"].warning:disabled:focus,
+.tivoli-style input[type="submit"].warning:disabled:focus,
+.tivoli-style input[type="reset"].warning:disabled:focus,
+.tivoli-btn.warning:disabled:focus,
+.tivoli-style button.warning:disabled:hover,
+.tivoli-style input[type="button"].warning:disabled:hover,
+.tivoli-style input[type="submit"].warning:disabled:hover,
+.tivoli-style input[type="reset"].warning:disabled:hover,
+.tivoli-btn.warning:disabled:hover,
+.tivoli-style button.info:disabled:focus,
+.tivoli-style input[type="button"].info:disabled:focus,
+.tivoli-style input[type="submit"].info:disabled:focus,
+.tivoli-style input[type="reset"].info:disabled:focus,
+.tivoli-btn.info:disabled:focus,
+.tivoli-style button.info:disabled:hover,
+.tivoli-style input[type="button"].info:disabled:hover,
+.tivoli-style input[type="submit"].info:disabled:hover,
+.tivoli-style input[type="reset"].info:disabled:hover,
+.tivoli-btn.info:disabled:hover,
+.tivoli-style button.primary.light:disabled:hover,
+.tivoli-style input[type="button"].primary.light:disabled:hover,
+.tivoli-style input[type="submit"].primary.light:disabled:hover,
+.tivoli-style input[type="reset"].primary.light:disabled:hover,
+.tivoli-btn.primary.light:disabled:hover,
+.tivoli-style button.primary.light:disabled:focus,
+.tivoli-style input[type="button"].primary.light:disabled:focus,
+.tivoli-style input[type="submit"].primary.light:disabled:focus,
+.tivoli-style input[type="reset"].primary.light:disabled:focus,
+.tivoli-btn.primary.light:disabled:focus,
+.tivoli-style button.success.light:disabled:hover,
+.tivoli-style input[type="button"].success.light:disabled:hover,
+.tivoli-style input[type="submit"].success.light:disabled:hover,
+.tivoli-style input[type="reset"].success.light:disabled:hover,
+.tivoli-btn.success.light:disabled:hover,
+.tivoli-style button.success.light:disabled:focus,
+.tivoli-style input[type="button"].success.light:disabled:focus,
+.tivoli-style input[type="submit"].success.light:disabled:focus,
+.tivoli-style input[type="reset"].success.light:disabled:focus,
+.tivoli-btn.success.light:disabled:focus,
+.tivoli-style button.error.light:disabled:hover,
+.tivoli-style input[type="button"].error.light:disabled:hover,
+.tivoli-style input[type="submit"].error.light:disabled:hover,
+.tivoli-style input[type="reset"].error.light:disabled:hover,
+.tivoli-btn.error.light:disabled:hover,
+.tivoli-style button.error.light:disabled:focus,
+.tivoli-style input[type="button"].error.light:disabled:focus,
+.tivoli-style input[type="submit"].error.light:disabled:focus,
+.tivoli-style input[type="reset"].error.light:disabled:focus,
+.tivoli-btn.error.light:disabled:focus,
+.tivoli-style button.warning.light:disabled:hover,
+.tivoli-style input[type="button"].warning.light:disabled:hover,
+.tivoli-style input[type="submit"].warning.light:disabled:hover,
+.tivoli-style input[type="reset"].warning.light:disabled:hover,
+.tivoli-btn.warning.light:disabled:hover,
+.tivoli-style button.warning.light:disabled:focus,
+.tivoli-style input[type="button"].warning.light:disabled:focus,
+.tivoli-style input[type="submit"].warning.light:disabled:focus,
+.tivoli-style input[type="reset"].warning.light:disabled:focus,
+.tivoli-btn.warning.light:disabled:focus,
+.tivoli-style button.info.light:disabled:hover,
+.tivoli-style input[type="button"].info.light:disabled:hover,
+.tivoli-style input[type="submit"].info.light:disabled:hover,
+.tivoli-style input[type="reset"].info.light:disabled:hover,
+.tivoli-btn.info.light:disabled:hover,
+.tivoli-style button.info.light:disabled:focus,
+.tivoli-style input[type="button"].info.light:disabled:focus,
+.tivoli-style input[type="submit"].info.light:disabled:focus,
+.tivoli-style input[type="reset"].info.light:disabled:focus,
+.tivoli-btn.info.light:disabled:focus {
+	box-shadow: none;
+}
+
+.tivoli-style button:disabled,
+.tivoli-style input[type=button]:disabled,
+.tivoli-style input[type=submit]:disabled,
+.tivoli-style input[type="reset"]:disabled,
+.tivoli-style button.primary:disabled,
+.tivoli-style input[type=button].primary:disabled,
+.tivoli-style input[type=submit].primary:disabled,
+.tivoli-style input[type="reset"].primary:disabled,
+.tivoli-btn.primary:disabled {
+	background: var(--color-primary-light);
+	border: 1px solid var(--color-primary-light);
+	color: rgba(255,255,255,.7);
+	cursor: not-allowed;
+}
+
+.tivoli-style button.success:disabled,
+.tivoli-style input[type=button].success:disabled,
+.tivoli-style input[type=submit].success:disabled,
+.tivoli-style input[type="reset"].success:disabled,
+.tivoli-btn.success:disabled {
+	background: var(--color-success-light);
+	border: 1px solid var(--color-success-light);
+	color: rgba(255,255,255,.7);
+	cursor: not-allowed;
+}
+
+.tivoli-style button.error:disabled,
+.tivoli-style input[type=button].error:disabled,
+.tivoli-style input[type=submit].error:disabled,
+.tivoli-style input[type="reset"].error:disabled,
+.tivoli-btn.error:disabled {
+	background: var(--color-error-light);
+	border: 1px solid var(--color-error-light);
+	color: rgba(255,255,255,.7);
+	cursor: not-allowed;
+}
+
+.tivoli-style button.warning:disabled,
+.tivoli-style input[type=button].warning:disabled,
+.tivoli-style input[type=submit].warning:disabled,
+.tivoli-style input[type="reset"].warning:disabled,
+.tivoli-btn.warning:disabled {
+	background: var(--color-warning-light);
+	border: 1px solid var(--color-warning-light);
+	color: rgba(0,0,0,.5);
+	cursor: not-allowed;
+}
+
+.tivoli-style button.info:disabled,
+.tivoli-style input[type=button].info:disabled,
+.tivoli-style input[type=submit].info:disabled,
+.tivoli-style input[type="reset"].info:disabled,
+.tivoli-btn.info:disabled {
+	background: var(--color-info-light);
+	border: 1px solid var(--color-info-light);
+	color: rgba(255,255,255,.7);
+	cursor: not-allowed;
+}
+
+.tivoli-style button.primary.light:disabled,
+.tivoli-style input[type=button].primary.light:disabled,
+.tivoli-style input[type=submit].primary.light:disabled,
+.tivoli-style input[type="reset"].primary.light:disabled,
+.tivoli-btn.primary.light:disabled {
+	background: #fff;
+	border: 1px solid var(--color-primary-light);
+	color: var(--color-primary-light);
+	cursor: not-allowed;
+}
+
+.tivoli-style button.success.light:disabled,
+.tivoli-style input[type=button].success.light:disabled,
+.tivoli-style input[type=submit].success.light:disabled,
+.tivoli-style input[type="reset"].success.light:disabled,
+.tivoli-btn.success.light:disabled {
+	background: #fff;
+	border: 1px solid var(--color-success-light);
+	color: var(--color-success-light);
+	cursor: not-allowed;
+}
+
+.tivoli-style button.error.light:disabled,
+.tivoli-style input[type=button].error.light:disabled,
+.tivoli-style input[type=submit].error.light:disabled,
+.tivoli-style input[type="reset"].error.light:disabled,
+.tivoli-btn.error.light:disabled {
+	background: #fff;
+	border: 1px solid var(--color-error-light);
+	color: var(--color-error-light);
+	cursor: not-allowed;
+}
+
+.tivoli-style button.warning.light:disabled,
+.tivoli-style input[type=button].warning.light:disabled,
+.tivoli-style input[type=submit].warning.light:disabled,
+.tivoli-style input[type="reset"].warning.light:disabled,
+.tivoli-btn.warning.light:disabled {
+	background: #fff;
+	border: 1px solid var(--color-warning-light);
+	color: var(--color-warning-light);
+	cursor: not-allowed;
+}
+
+.tivoli-style button.info.light:disabled,
+.tivoli-style input[type=button].info.light:disabled,
+.tivoli-style input[type=submit].info.light:disabled,
+.tivoli-style input[type="reset"].info.light:disabled,
+.tivoli-btn.info.light:disabled {
+	background: #fff;
+	border: 1px solid var(--color-info-light);
+	color: var(--color-info-light);
+	cursor: not-allowed;
+}
+
+.tivoli-style button.small,
+.tivoli-style input[type="button"].small,
+.tivoli-style input[type="submit"].small,
+.tivoli-style input[type="reset"].small,
+.tivoli-style .tivoli-btn.small,
+.tivoli-btn.small {
+	height: 25px;
+	font-size: 12px;
+	padding: 5px 8px;
+}
+
+.tivoli-style button.big,
+.tivoli-style input[type="button"].big,
+.tivoli-style input[type="submit"].big,
+.tivoli-style input[type="reset"].big,
+.tivoli-style .tivoli-btn.big,
+.tivoli-btn.big {
+	height: 45px;
+	padding: 9px 12px 8px 12px;
+	font-size: 20px;
+}
+.tivoli-form-group input[type=text].before-brother,
+.tivoli-form-group input[type=email].before-brother,
+.tivoli-form-group input[type=password].before-brother,
+.tivoli-form-group input[type=number].before-brother,
+.tivoli-form-group input[type=date].before-brother,
+.tivoli-form-group input[type=datetime-local].before-brother,
+.tivoli-form-group input[type=month].before-brother,
+.tivoli-form-group input[type=range].before-brother,
+.tivoli-form-group input[type=search].before-brother,
+.tivoli-form-group input[type=tel].before-brother,
+.tivoli-form-group input[type=time].before-brother,
+.tivoli-form-group input[type=url].before-brother,
+.tivoli-form-group input[type=week].before-brother,
+.tivoli-form-group input[type=color].before-brother,
+.tivoli-form-group select.before-brother {
+	margin-right: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.tivoli-form-group input[type=text].after-brother,
+.tivoli-form-group input[type=email].after-brother,
+.tivoli-form-group input[type=password].after-brother,
+.tivoli-form-group input[type=number].after-brother,
+.tivoli-form-group input[type=date].after-brother,
+.tivoli-form-group input[type=datetime-local].after-brother,
+.tivoli-form-group input[type=month].after-brother,
+.tivoli-form-group input[type=range].after-brother,
+.tivoli-form-group input[type=search].after-brother,
+.tivoli-form-group input[type=tel].after-brother,
+.tivoli-form-group input[type=time].after-brother,
+.tivoli-form-group input[type=url].after-brother,
+.tivoli-form-group input[type=week].after-brother,
+.tivoli-form-group input[type=color].after-brother,
+.tivoli-form-group select.after-brother {
+	margin-left: 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.tivoli-form-group span.before-input, .tivoli-form-group a.before-input {
+	display: inline-block;
+	margin-left: 5px;
+	margin-right: -5px;
+	line-height: 33px;
+	height: 33px;
+	padding: 0 10px;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	background: var(--color-primary-bg);
+	color: var(--color-primary);
+	border: 1px solid var(--color-primary);
+}
+
+.tivoli-form-group span.after-input, .tivoli-form-group a.after-input {
+	display: inline-block;
+	margin-right: 5px;
+	margin-left: -5px;
+	line-height: 33px;
+	height: 33px;
+	padding: 0 10px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	background: var(--color-primary-bg);
+	color: var(--color-primary);
+	border: 1px solid var(--color-primary);
+}
+
+.tivoli-form-group span {
+	cursor: default;
+}
+
+.tivoli-form-group a {
+	cursor: pointer;
+}
+
+.tivoli-form-group button.before-input,
+.tivoli-form-group input[type=button].before-input,
+.tivoli-form-group input[type=submit].before-input,
+.tivoli-form-group input[type=reset].before-input {
+	display: inline-block;
+	margin-left: 5px;
+	margin-right: -5px;
+	line-height: 35px;
+	height: 35px;
+	padding: 0 10px;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	background: var(--color-primary-bg);
+	color: var(--color-primary);
+	border: 1px solid var(--color-primary);
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.tivoli-form-group button.after-input,
+.tivoli-form-group input[type=button].after-input,
+.tivoli-form-group input[type=submit].after-input,
+.tivoli-form-group input[type=reset].after-input {
+	display: inline-block;
+	margin-right: 5px;
+	margin-left: -5px;
+	line-height: 35px;
+	height: 35px;
+	padding: 0 10px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	background: var(--color-primary-bg);
+	color: var(--color-primary);
+	border: 1px solid var(--color-primary);
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.tivoli-form-group button.before-input.small,
+.tivoli-form-group input[type=button].before-input.small,
+.tivoli-form-group input[type=submit].before-input.small,
+.tivoli-form-group input[type=reset].before-input.small {
+	display: inline-block;
+	margin-left: 5px;
+	margin-right: -5px;
+	line-height: 25px;
+	height: 25px;
+	padding: 0 10px;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	background: var(--color-primary-bg);
+	color: var(--color-primary);
+	border: 1px solid var(--color-primary);
+	font-size: 10px;
+	cursor: pointer;
+}
+
+.tivoli-form-group button.after-input.small,
+.tivoli-form-group input[type=button].after-input.small,
+.tivoli-form-group input[type=submit].after-input.small,
+.tivoli-form-group input[type=reset].after-input.small {
+	display: inline-block;
+	margin-right: 5px;
+	margin-left: -5px;
+	line-height: 25px;
+	height: 25px;
+	padding: 0 10px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	background: var(--color-primary-bg);
+	color: var(--color-primary);
+	border: 1px solid var(--color-primary);
+	font-size: 10px;
+	cursor: pointer;
+}
+
+.tivoli-form-group button.before-input.big,
+.tivoli-form-group input[type=button].before-input.big,
+.tivoli-form-group input[type=submit].before-input.big,
+.tivoli-form-group input[type=reset].before-input.big {
+	display: inline-block;
+	margin-left: 5px;
+	margin-right: -5px;
+	line-height: 45px;
+	height: 45px;
+	padding: 0 10px;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	background: var(--color-primary-bg);
+	color: var(--color-primary);
+	border: 1px solid var(--color-primary);
+	font-size: 18px;
+	cursor: pointer;
+}
+
+.tivoli-form-group button.after-input.big,
+.tivoli-form-group input[type=button].after-input.big,
+.tivoli-form-group input[type=submit].after-input.big,
+.tivoli-form-group input[type=reset].after-input.big {
+	display: inline-block;
+	margin-right: 5px;
+	margin-left: -5px;
+	line-height: 45px;
+	height: 45px;
+	padding: 0 10px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	background: var(--color-primary-bg);
+	color: var(--color-primary);
+	border: 1px solid var(--color-primary);
+	font-size: 18px;
+	cursor: pointer;
+}
+
+.tivoli-form-group button.before-input:hover,
+.tivoli-form-group input[type=button].before-input:hover,
+.tivoli-form-group input[type=submit].before-input:hover,
+.tivoli-form-group input[type=reset].before-input:hover,
+.tivoli-form-group button.before-input:focus,
+.tivoli-form-group input[type=button].before-input:focus,
+.tivoli-form-group input[type=submit].before-input:focus,
+.tivoli-form-group input[type=reset].before-input:focus,
+.tivoli-form-group button.after-input:hover,
+.tivoli-form-group input[type=button].after-input:hover,
+.tivoli-form-group input[type=submit].after-input:hover,
+.tivoli-form-group input[type=reset].after-input:hover,
+.tivoli-form-group button.after-input:focus,
+.tivoli-form-group input[type=button].after-input:focus,
+.tivoli-form-group input[type=submit].after-input:focus,
+.tivoli-form-group input[type=reset].after-input:focus,
+.tivoli-form-group a.before-input:hover,
+.tivoli-form-group a.before-input:focus,
+.tivoli-form-group a.after-input:hover,
+.tivoli-form-group a.after-input:focus {
+	background: var(--color-primary-bg-dark);
+	color: var(--color-primary-dark);
+	border: 1px solid var(--color-primary-dark);
+	box-shadow: 0 0 0 .2rem var(--color-primary-shadow);
+	transition: all var(--time-transition) linear;
+}
+
+.tivoli-form-group button.success,
+.tivoli-form-group input[type=button].success,
+.tivoli-form-group input[type=submit].success,
+.tivoli-form-group input[type=reset].success,
+.tivoli-form-group span.success,
+.tivoli-form-group a.success {
+	background: var(--color-success-bg);
+	color: var(--color-success);
+	border: 1px solid var(--color-success);
+}
+
+.tivoli-form-group button.success:hover,
+.tivoli-form-group input[type=button].success:hover,
+.tivoli-form-group input[type=submit].success:hover,
+.tivoli-form-group input[type=reset].success:hover,
+.tivoli-form-group button.success:focus,
+.tivoli-form-group input[type=button].success:focus,
+.tivoli-form-group input[type=submit].success:focus,
+.tivoli-form-group input[type=reset].success:focus,
+.tivoli-form-group a.success:hover,
+.tivoli-form-group a.success:focus {
+	background: var(--color-success-bg-dark);
+	color: var(--color-success-dark);
+	border: 1px solid var(--color-success-dark);
+	box-shadow: 0 0 0 .2rem var(--color-success-shadow);
+	transition: all var(--time-transition) linear;
+}
+
+.tivoli-form-group button.error,
+.tivoli-form-group input[type=button].error,
+.tivoli-form-group input[type=submit].error,
+.tivoli-form-group input[type=reset].error,
+.tivoli-form-group span.error,
+.tivoli-form-group a.error {
+	background: var(--color-error-bg);
+	color: var(--color-error);
+	border: 1px solid var(--color-error);
+}
+
+.tivoli-form-group button.error:hover,
+.tivoli-form-group input[type=button].error:hover,
+.tivoli-form-group input[type=submit].error:hover,
+.tivoli-form-group input[type=reset].error:hover,
+.tivoli-form-group button.error:focus,
+.tivoli-form-group input[type=button].error:focus,
+.tivoli-form-group input[type=submit].error:focus,
+.tivoli-form-group input[type=reset].error:focus,
+.tivoli-form-group a.error:hover,
+.tivoli-form-group a.error:focus {
+	background: var(--color-error-bg-dark);
+	color: var(--color-error-dark);
+	border: 1px solid var(--color-error-dark);
+	box-shadow: 0 0 0 .2rem var(--color-error-shadow);
+	transition: all var(--time-transition) linear;
+}
+
+.tivoli-form-group button.warning,
+.tivoli-form-group input[type=button].warning,
+.tivoli-form-group input[type=submit].warning,
+.tivoli-form-group input[type=reset].warning,
+.tivoli-form-group span.warning,
+.tivoli-form-group a.warning {
+	background: var(--color-warning-bg);
+	color: var(--color-warning);
+	border: 1px solid var(--color-warning);
+}
+
+.tivoli-form-group button.warning:hover,
+.tivoli-form-group input[type=button].warning:hover,
+.tivoli-form-group input[type=submit].warning:hover,
+.tivoli-form-group input[type=reset].warning:hover,
+.tivoli-form-group button.warning:focus,
+.tivoli-form-group input[type=button].warning:focus,
+.tivoli-form-group input[type=submit].warning:focus,
+.tivoli-form-group input[type=reset].warning:focus,
+.tivoli-form-group a.warning:hover,
+.tivoli-form-group a.warning:focus {
+	background: var(--color-warning-bg-dark);
+	color: var(--color-warning-dark);
+	border: 1px solid var(--color-warning-dark);
+	box-shadow: 0 0 0 .2rem var(--color-warning-shadow);
+	transition: all var(--time-transition) linear;
+}
+
+.tivoli-form-group button.info,
+.tivoli-form-group input[type=button].info,
+.tivoli-form-group input[type=submit].info,
+.tivoli-form-group input[type=reset].info,
+.tivoli-form-group span.info,
+.tivoli-form-group a.info {
+	background: var(--color-info-bg);
+	color: var(--color-info);
+	border: 1px solid var(--color-info);
+}
+
+.tivoli-form-group button.info:hover,
+.tivoli-form-group input[type=button].info:hover,
+.tivoli-form-group input[type=submit].info:hover,
+.tivoli-form-group input[type=reset].info:hover,
+.tivoli-form-group button.info:focus,
+.tivoli-form-group input[type=button].info:focus,
+.tivoli-form-group input[type=submit].info:focus,
+.tivoli-form-group input[type=reset].info:focus,
+.tivoli-form-group a.info:hover,
+.tivoli-form-group a.info:focus {
+	background: var(--color-info-bg-dark);
+	color: var(--color-info-dark);
+	border: 1px solid var(--color-info-dark);
+	box-shadow: 0 0 0 .2rem var(--color-info-shadow);
+	transition: all var(--time-transition) linear;
+}
+.tivoli-label-cb,
+.tivoli-label-rd {
+  position: relative;
+  padding-left: 28px;
+  padding-top: 2px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.tivoli-label-cb input[type=checkbox], .tivoli-label-rd input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.tivoli-checkmark-cb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: var(--color-primary-light);
+}
+
+.tivoli-checkmark-rd {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: var(--color-primary-light);
+  border-radius: 50%;
+}
+
+.tivoli-label-cb:hover input[type=checkbox] ~ .tivoli-checkmark-cb {
+  background-color: var(--color-primary-dark);
+  border-radius: 3px;
+}
+
+.tivoli-label-cb input[type=checkbox]:checked ~ .tivoli-checkmark-cb {
+  background-color: var(--color-primary);
+  border-radius: 3px;
+}
+
+.tivoli-label-rd:hover input[type=radio] ~ .tivoli-checkmark-rd {
+  background-color: var(--color-primary-dark);
+}
+
+.tivoli-label-rd input[type=radio]:checked ~ .tivoli-checkmark-rd {
+  background-color: var(--color-primary);
+}
+
+.tivoli-checkmark-cb:after, .tivoli-checkmark-rd:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.tivoli-label-cb input[type=checkbox]:checked ~ .tivoli-checkmark-cb:after,
+.tivoli-label-rd input[type=radio]:checked ~ .tivoli-checkmark-rd:after {
+  display: block;
+}
+
+.tivoli-label-cb .tivoli-checkmark-cb:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.tivoli-label-rd .tivoli-checkmark-rd:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.tivoli-label-cb-disabled,
+.tivoli-label-rd-disabled {
+	position: relative;
+  padding-left: 28px;
+  padding-top: 2px;
+  margin-bottom: 12px;
+  cursor: not-allowed;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.tivoli-label-cb-disabled input[type=checkbox], .tivoli-label-rd-disabled input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.tivoli-checkmark-cb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: var(--color-primary-light);
+}
+
+.tivoli-checkmark-rd {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: var(--color-primary-light);
+  border-radius: 50%;
+}
+
+.tivoli-checkmark-cb:after, .tivoli-checkmark-rd:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.tivoli-label-cb-disabled input[type=checkbox]:checked ~ .tivoli-checkmark-cb:after,
+.tivoli-label-rd-disabled input[type=radio]:checked ~ .tivoli-checkmark-rd:after {
+  display: block;
+}
+
+.tivoli-label-cb-disabled .tivoli-checkmark-cb:after {
+  z-index: 1;
+}
+
+.tivoli-label-rd-disabled .tivoli-checkmark-rd:after {
+  z-index: 1;
+}
+
+.tivoli-label-cb-disabled input[type=checkbox]:checked ~ .tivoli-checkmark-cb {
+  background-color: var(--color-primary);
+  border-radius: 3px;
+}
+
+.tivoli-label-rd-disabled input[type=radio]:checked ~ .tivoli-checkmark-rd {
+  background-color: var(--color-primary);
+}
+
+.tivoli-label-cb-disabled .tivoli-checkmark-cb:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.tivoli-label-rd-disabled .tivoli-checkmark-rd:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
