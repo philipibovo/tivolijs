@@ -5,7 +5,8 @@ $(window).on("load", function() {
   });
 
   $("#btn-download").click(function() {
-    window.location = "tivolijs-1.0.1.zip";
+    window.location =
+      "https://github.com/philipibovo/tivolijs/archive/1.0.0.zip";
   });
 
   $(".old-versions-title").click(function() {
