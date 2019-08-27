@@ -1,10 +1,18 @@
 $(window).on("load", function() {
   $("#header-btn-download").click(function() {
-    window.location = "tivolijs-1.0.1.zip";
+    window.location =
+      "https://github.com/philipibovo/tivolijs/archive/1.0.1.zip";
   });
 
   $("#btn-download").click(function() {
     window.location = "tivolijs-1.0.1.zip";
+  });
+
+  $(".old-versions-title").click(function() {
+    $("#old-versions").toggleClass("show");
+    $(".old-versions-list").toggleClass("show");
+    $(".old-versions-title i").toggleClass("fa-caret-down");
+    $(".old-versions-title i").toggleClass("fa-caret-up");
   });
 
   $(".menu > ul > li > ul span.title").click(function() {

@@ -189,6 +189,7 @@ section {
 }
 
 .content section#section-how-use #package button {
+  width: 230px;
   background: #fff;
   border: 2px solid #7124e5;
   padding: 7px 20px 6px 20px;
@@ -207,6 +208,55 @@ section {
 
 .content section#section-how-use #package button span {
   font-size: 12px;
+}
+
+.content section#section-how-use #package #old-versions {
+  width: 230px;
+  margin-top: -5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.content section#section-how-use #package #old-versions.show {
+  background: #7124e5;
+  color: #fff;
+}
+
+.old-versions-title {
+  font-size: 12px;
+  text-align: center;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.old-versions-list {
+  display: none;
+  font-size: 12px;
+  text-align: center;
+  background: #7124e5;
+  color: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.old-versions-list.show {
+  display: block;
+}
+
+.old-versions-list p {
+  margin: 0;
+  padding: 5px 0;
+}
+
+.old-versions-list p a,
+.old-versions-list p a:active,
+.old-versions-list p a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.content section#section-how-use #package #old-versions .list a:hover {
+  text-decoration: underline;
 }
 
 footer {
